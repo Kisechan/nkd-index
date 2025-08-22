@@ -18,7 +18,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
-      width: 360px;
+      width: 500px;
     }
     input {
       width: 100%;
@@ -52,9 +52,11 @@
   <div class="container">
     <h2>南方科技大学指数计算器</h2>
     <input type="text" id="inputText" placeholder="输入你的大学">
-    <button onclick="calculateIndex()">计算指数</button>
+    <button onclick="calculateIndex()">计算你的大学的 NKD 指数</button>
     <div class="result" id="result">指数结果将在这里显示</div>
     <p>灵感提供：Actinos Oxyfluoros</p>
+    <p>根据名称内有“南方科技大学”中的几个字计算你的 NKD-index</p>
+    <a href="https://github.com/Kisechan/nkd-index">GitHub 仓库</a>
   </div>
 
   <script>
