@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>南方科技大学指数计算器</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 360px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 12px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #0078d7;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005a9e;
+    }
+    .result {
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>南方科技大学指数计算器</h2>
+    <input type="text" id="inputText" placeholder="输入你的大学">
+    <button onclick="calculateIndex()">计算指数</button>
+    <div class="result" id="result">指数结果将在这里显示</div>
+  </div>
+
+  <script>
+    function calculateIndex() {
+      const targetChars = new Set("南方科技大学");
+      const input = document.getElementById("inputText").value;
+      const foundChars = new Set();
+
+      for (let ch of input) {
+        if (targetChars.has(ch)) {
+          foundChars.add(ch);
+        }
+      }
+
+      const count = foundChars.size;
+      let index = 0;
+      if (count > 0) {
+        index = (count / 6).toFixed(4);
+      }
+
+      document.getElementById("result").innerText =
+        "指数 = " + index;
+    }
+  </script>
+</body>
+</html>
